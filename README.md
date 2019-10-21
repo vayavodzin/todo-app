@@ -8,7 +8,7 @@ open in browser index.html
 
 ## add in  browser console
 
-let app = myApp.init();
+let app = myApp.app;
 app.todo.create('task 1')
 app.todo.create('task 2')
 app.todo.create('task 3')
