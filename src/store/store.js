@@ -8,28 +8,38 @@ export class Store extends AbstractStore {
   }
 
   fetch(id = null) {
-    if (id) {
-      return this.store[id];
-    }
+    return new Promise(resolve => {
+      if (id) {
+        resolve(this.store[id]);
+      }
+      resolve(this.store)
+    });
 
-    return this.store;
   }
 
   add(task) {
-    return this.store.push(task);
+    return new Promise(resolve => {
+      this.store[parseInt(task.id)] = task;
+      resolve(task)
+    });
   }
 
-  update(taskId) {
-    if (this.store[taskId]) {
-      let task = this.store[taskId];
-      task.toggle();
-    }
+  update(taskId, task) {
+    return new Promise(resolve => {
+      if (this.store[taskId]) {
+        this.store[taskId] = task;
+        resolve(task)
+      }
+    });
   }
 
   delete(id) {
-    if (this.store[id]) {
-      delete this.store[id];
-    }
+    return new Promise(resolve => {
+      if (this.store[id]) {
+        delete this.store[id];
+        resolve(true);
+      }
+    });
   }
 
 }

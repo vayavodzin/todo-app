@@ -4,32 +4,27 @@ export class Todo {
       this.view = view;
     }
   
-    create(task) {
-      this.taskManager.create(task);
-      this.render();
+    async create(task) {
+      const createdTask = await this.taskManager.create(task);
+      this.render(createdTask);
     }
   
-    read(taskId = null) {
-      return new Promise(resolve => {
-        let result = this.taskManager.read(taskId) || [];
-        resolve(result);
-      });
+    async read(taskId = null) {
+      const result = await this.taskManager.read(taskId) || [];
+      result.forEach(element => this.render(element));
     }
   
-    update(taskId) {
-      this.taskManager.update(taskId);
-      this.render();
+    async update(taskId) {
+      const updatedTask = await this.taskManager.update(taskId);
+      this.render(updatedTask)
     }
   
-    delete(taskId) {
-      this.taskManager.delete(taskId);
-      this.render();
+    async delete(taskId) {
+      await this.taskManager.delete(taskId);
+      this.read();
     }
   
-    render() {
-      this.read().then(result => {
-        this.view.render(result);
-      });
+    render(element) {
+      this.view.render(element);
     }
-  
   }
