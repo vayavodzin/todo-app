@@ -20,7 +20,7 @@ export class TaskManager {
       return this.store.fetch(taskId);
     }
   
-    update(taskId) {
+    toggle(taskId) {
       const task = this.store.fetch(taskId);
       return task
         .then(task => {

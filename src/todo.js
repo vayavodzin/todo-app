@@ -19,8 +19,8 @@ export class Todo {
       this.view.render(task)
     }
   
-    async update(taskId) {
-      const updatedTask = await this.taskManager.update(taskId);
+    async toggle(taskId) {
+      const updatedTask = await this.taskManager.toggle(taskId);
       this.view.render(updatedTask);
     }
   
