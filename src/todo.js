@@ -9,9 +9,14 @@ export class Todo {
       this.view.render(createdTask);
     }
   
-    async read(taskId = null) {
-      const result = await this.taskManager.read(taskId) || [];
+    async getTasks() {
+      const result = await this.taskManager.getTasks() || [];
       result.forEach(element => this.view.render(element));
+    }
+
+    async getTask(taskId) {
+      const task = await this.taskManager.getTask(taskId);
+      this.view.render(task)
     }
   
     async update(taskId) {
@@ -21,6 +26,6 @@ export class Todo {
   
     async delete(taskId) {
       await this.taskManager.delete(taskId);
-      this.read();
+      this.getTasks();
     }
   }

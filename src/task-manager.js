@@ -10,10 +10,15 @@ export class TaskManager {
       return this.store.add(task).then(task => this.clone(task));
     }
   
-    read(taskId = null) {
-      return this.store.fetch(taskId)
+    getTasks() {
+      return this.store.fetch()
         .then(tasks => tasks.map(task => this.clone(task)))
         .then(tasks => tasks.sort((taskPrev, taskNext) => taskPrev.timestamp - taskNext.timestamp));
+    }
+
+    getTask(taskId = null) {
+      return this.store.fetch(taskId)
+        .then(tasks => tasks.map(task => this.clone(task)));
     }
   
     update(taskId) {
