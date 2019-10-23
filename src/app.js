@@ -10,7 +10,7 @@ class App {
     let taskManager = new TaskManager(store);
     let view = new ViewManager();
     let todo = new Todo(taskManager, view);
-    todo.render();
+    todo.read();
     return {view, todo};
   }
 }
