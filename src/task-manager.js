@@ -17,8 +17,7 @@ export class TaskManager {
     }
 
     getTask(taskId = null) {
-      return this.store.fetch(taskId)
-        .then(tasks => tasks.map(task => this.clone(task)));
+      return this.store.fetch(taskId);
     }
   
     update(taskId) {
