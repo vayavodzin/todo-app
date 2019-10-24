@@ -1,4 +1,3 @@
-"use strict";
 export class Task {
   constructor(title) {
     this._title = title;

@@ -4,7 +4,11 @@ import { AbstractStore } from './abstract-store.js';
 export class Store extends AbstractStore {
   constructor() {
     super();
-    this.store = [];
+    this._store = [];
+  }
+
+  get store() {
+    return this._store;
   }
 
   fetch(taskId = null) {
@@ -21,7 +25,7 @@ export class Store extends AbstractStore {
 
   add(task) {
     return new Promise(resolve => {
-      this.store.push(task);
+      this._store.push(task);
       resolve(task)
     });
   }
@@ -49,8 +53,7 @@ export class Store extends AbstractStore {
   }
 
   getTaskIndex(taskId){
-    let store = this.store;
-    return store.findIndex(task => task && (task.id === taskId));
+    return this._store.findIndex(task => task && (task.id === taskId));
   }
 
 }
