@@ -53,6 +53,10 @@ export class Store extends AbstractStore {
   }
 
   getTaskIndex(taskId){
+    return this._getTaskIndex(taskId);
+  }
+
+  _getTaskIndex(taskId){
     return this._store.findIndex(task => task && (task.id === taskId));
   }
 
