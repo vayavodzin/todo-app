@@ -25,7 +25,10 @@ export class Todo {
     }
   
     async delete(taskId) {
-      await this.taskManager.delete(taskId);
-      this.getTasks();
+      let removed = await this.taskManager.delete(taskId);
+      if(removed) {
+        this.viewManager.remove(taskId);
+        this.getTasks();
+      }
     }
   }

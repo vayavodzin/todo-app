@@ -1,0 +1,38 @@
+html {
+  box-sizing: border-box;
+  padding: 0 0;
+  font-size: 15px;
+}
+
+.header {
+  height: 40px;
+  background-color: #3266FF;
+  box-shadow: -5px 5px 7px 0px black;
+}
+
+.header--title {
+  margin: 10px;
+  font-size: 2rem;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.todo-list {
+  list-style-type: none;
+  color: #FFFFFF;
+}
+
+.todo-list--item {
+  max-width: 50%;
+  background-color: #ff9800;
+  margin-bottom: 10px;
+}
+
+.todo-list--title {
+    display: inline-block;
+    padding: 10px;
+}
+
+.todo-list--checkbox {
+    float: right;
+}

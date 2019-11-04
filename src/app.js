@@ -1,3 +1,4 @@
+import './styles/app.css';
 import { Todo } from "./todo.js";
 import { TaskManager } from "./task-manager.js";
 import { Store } from "./store/store.js";

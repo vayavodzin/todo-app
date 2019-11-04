@@ -1,5 +1,7 @@
 export function TaskView(task) {
-  return `<li id="${task.id}">
-            <h3>${task.title}</h3>
+  let checked = task.status === 1 ? 'checked' : '';
+  return `<li class="todo-list--item" id="${task.id}">
+            <div class="todo-list--title">${task.title}</div>
+            <input type="checkbox" class="todo-list--checkbox" ${checked} />
           </li>`;
 }
