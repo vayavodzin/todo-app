@@ -10,29 +10,72 @@ html {
   box-shadow: -5px 5px 7px 0px black;
 }
 
-.header--title {
+.header__title {
   margin: 10px;
-  font-size: 2rem;
+  font-size: 30px;
   color: #FFFFFF;
   text-align: center;
 }
 
+.todo {
+  padding: 0 20px;
+}
+
+.todo-form {
+  display: block;
+  width: 100%;
+  padding: 20px 0px;
+}
+
+.todo-form__input {
+  display: inline-block;
+  width: 70%;
+  height: 25px;
+  padding-left: 5px;
+  background: #f2f3ee;
+}
+
+.todo-form__button {
+  display: inline-block;
+  padding: 3px 10px;
+  background-color: #3266FF;
+  color: #FFFFFF;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
 .todo-list {
+  padding: 0px;
   list-style-type: none;
   color: #FFFFFF;
 }
 
-.todo-list--item {
+.todo-list__item {
   max-width: 50%;
   background-color: #ff9800;
   margin-bottom: 10px;
 }
 
-.todo-list--title {
+.todo-list__title {
     display: inline-block;
     padding: 10px;
 }
 
-.todo-list--checkbox {
+.todo-list__checkbox {
     float: right;
+}
+
+.todo-list__deleteButton {
+  background: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 2em;
+  color: #f00;
+  display: inline-block;
+  font-size: 8px;
+  height: 20px;
+  line-height: 2px;
+  margin: 10px;
+  text-align: center;
+  width: 20px;
+  outline: none;
 }

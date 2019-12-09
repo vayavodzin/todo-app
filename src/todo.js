@@ -1,7 +1,13 @@
+import { EventManager } from "./event-manager.js";
+
 export class Todo {
     constructor(taskManager, viewManager) {
       this.taskManager = taskManager;
       this.viewManager = viewManager;
+      new EventManager()
+        .bindCreateListItem(this.create.bind(this))
+        .bindDeleteListItem(this.delete.bind(this))
+        .bindToggleListItem(this.toggle.bind(this))
     }
   
     async create(title) {
@@ -31,4 +37,5 @@ export class Todo {
         this.getTasks();
       }
     }
+
   }

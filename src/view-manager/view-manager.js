@@ -2,7 +2,7 @@ import { AbstractViewManager } from './abstract-view-manager.js';
 import { TaskView } from '../view/task-view.js';
 
 export class ViewManager extends AbstractViewManager {
-  render(element, action) {
+  render(element) {
     let domElement = document.getElementById(element.id);
     let tempElement = document.createElement('div');
     tempElement.innerHTML = TaskView(element);
