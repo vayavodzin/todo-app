@@ -1,4 +1,4 @@
-html {
+* {
   box-sizing: border-box;
   padding: 0 0;
   font-size: 15px;
@@ -45,13 +45,12 @@ html {
 }
 
 .todo-list {
-  padding: 0px;
+  max-width: 50%;
   list-style-type: none;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .todo-list__item {
-  max-width: 50%;
   background-color: #ff9800;
   margin-bottom: 10px;
 }
@@ -68,7 +67,7 @@ html {
 .todo-list__deleteButton {
   background: transparent;
   border: 1px solid #ffffff;
-  border-radius: 2em;
+  border-radius: 20px;
   color: #f00;
   display: inline-block;
   font-size: 8px;
@@ -78,4 +77,10 @@ html {
   text-align: center;
   width: 20px;
   outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .todo-form__input, .todo-list {
+        max-width: 100%;
+    }
 }
