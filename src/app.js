@@ -1,0 +1,16 @@
+import './styles/app.css';
+import { Todo } from "./todo.js";
+import { TaskManager } from "./task-manager.js";
+import { Store } from "./store/store.js";
+import { ViewManager } from "./view-manager/view-manager.js";
+
+class App {
+  init() {
+    let store = new Store();
+    let taskManager = new TaskManager(store);
+    let view = new ViewManager();
+    new Todo(taskManager, view).getTasks();
+  }
+}
+
+new App().init();
